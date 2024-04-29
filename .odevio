@@ -1,0 +1,8 @@
+app-key=3J4P
+build-type=development
+flutter=3.10.6
+app-version=1.0.0
+build-number=1
+mode=release
+target=lib/main.dart
+tunnel-host=localhost

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:training_app/screens/home.dart';
+import 'package:radix_icons/radix_icons.dart';
 
 void main() {
   runApp(const TrainingApp());
@@ -13,9 +14,11 @@ class TrainingApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: GoogleFonts.openSans().fontFamily,
         colorScheme: ColorScheme.fromSeed(
+            background: const Color.fromRGBO(17, 17, 18, 1),
             seedColor: const Color.fromARGB(255, 129, 97, 37)),
         useMaterial3: true,
       ),
@@ -44,13 +47,11 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text("Training App"),
-      ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Color.fromRGBO(35, 31, 32, 1),
+        showUnselectedLabels: false,
+        showSelectedLabels: false,
+        backgroundColor: Color.fromRGBO(28, 28, 30, 1),
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.white.withOpacity(.80),
         selectedFontSize: 14,
@@ -63,20 +64,20 @@ class _MyHomePageState extends State<MyHomePage> {
         },
         items: const [
           BottomNavigationBarItem(
-            label: "Home",
-            icon: Icon(Icons.home),
+            label: "",
+            icon: Icon(RadixIcons.Home, size: 20.0),
           ),
           BottomNavigationBarItem(
-            label: "Stats",
-            icon: Icon(Icons.important_devices),
+            label: "",
+            icon: Icon(RadixIcons.Activity_Log, size: 20.0),
           ),
           BottomNavigationBarItem(
-            label: "History",
-            icon: Icon(Icons.history),
+            label: "",
+            icon: Icon(RadixIcons.Bell, size: 20.0),
           ),
           BottomNavigationBarItem(
-            label: "Settings",
-            icon: Icon(Icons.settings),
+            label: "",
+            icon: Icon(RadixIcons.Person, size: 20.0),
           ),
         ],
       ),
